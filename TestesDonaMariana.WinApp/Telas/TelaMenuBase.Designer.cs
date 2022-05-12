@@ -62,6 +62,7 @@
             this.btnExcluirCadastro.TabIndex = 0;
             this.btnExcluirCadastro.Text = "Excluir Cadastro";
             this.btnExcluirCadastro.UseVisualStyleBackColor = true;
+            this.btnExcluirCadastro.Click += new System.EventHandler(this.btnExcluirCadastro_Click);
             // 
             // listBoxCadastros
             // 

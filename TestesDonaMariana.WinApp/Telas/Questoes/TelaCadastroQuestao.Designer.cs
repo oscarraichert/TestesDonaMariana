@@ -36,6 +36,9 @@
             this.btnAdicionarAlternativa = new System.Windows.Forms.Button();
             this.textBoxMateria = new System.Windows.Forms.TextBox();
             this.lblMateria = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.comboBoxDisciplina = new System.Windows.Forms.ComboBox();
+            this.lblDisciplina = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDescricao
@@ -59,7 +62,7 @@
             // 
             this.listBoxAlternativas.FormattingEnabled = true;
             this.listBoxAlternativas.ItemHeight = 15;
-            this.listBoxAlternativas.Location = new System.Drawing.Point(110, 69);
+            this.listBoxAlternativas.Location = new System.Drawing.Point(110, 98);
             this.listBoxAlternativas.Name = "listBoxAlternativas";
             this.listBoxAlternativas.Size = new System.Drawing.Size(330, 154);
             this.listBoxAlternativas.TabIndex = 2;
@@ -68,7 +71,7 @@
             // 
             this.lblAlternativas.AutoSize = true;
             this.lblAlternativas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAlternativas.Location = new System.Drawing.Point(12, 69);
+            this.lblAlternativas.Location = new System.Drawing.Point(12, 98);
             this.lblAlternativas.Name = "lblAlternativas";
             this.lblAlternativas.Size = new System.Drawing.Size(92, 21);
             this.lblAlternativas.TabIndex = 0;
@@ -76,16 +79,17 @@
             // 
             // btnExcluirAlternativa
             // 
-            this.btnExcluirAlternativa.Location = new System.Drawing.Point(365, 229);
+            this.btnExcluirAlternativa.Location = new System.Drawing.Point(365, 258);
             this.btnExcluirAlternativa.Name = "btnExcluirAlternativa";
             this.btnExcluirAlternativa.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirAlternativa.TabIndex = 3;
             this.btnExcluirAlternativa.Text = "Excluir";
             this.btnExcluirAlternativa.UseVisualStyleBackColor = true;
+            this.btnExcluirAlternativa.Click += new System.EventHandler(this.btnExcluirAlternativa_Click);
             // 
             // btnAdicionarAlternativa
             // 
-            this.btnAdicionarAlternativa.Location = new System.Drawing.Point(284, 229);
+            this.btnAdicionarAlternativa.Location = new System.Drawing.Point(284, 258);
             this.btnAdicionarAlternativa.Name = "btnAdicionarAlternativa";
             this.btnAdicionarAlternativa.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionarAlternativa.TabIndex = 3;
@@ -95,7 +99,7 @@
             // 
             // textBoxMateria
             // 
-            this.textBoxMateria.Location = new System.Drawing.Point(110, 40);
+            this.textBoxMateria.Location = new System.Drawing.Point(110, 69);
             this.textBoxMateria.Name = "textBoxMateria";
             this.textBoxMateria.Size = new System.Drawing.Size(330, 23);
             this.textBoxMateria.TabIndex = 1;
@@ -104,17 +108,48 @@
             // 
             this.lblMateria.AutoSize = true;
             this.lblMateria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMateria.Location = new System.Drawing.Point(12, 42);
+            this.lblMateria.Location = new System.Drawing.Point(12, 67);
             this.lblMateria.Name = "lblMateria";
             this.lblMateria.Size = new System.Drawing.Size(63, 21);
             this.lblMateria.TabIndex = 0;
             this.lblMateria.Text = "Materia";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSalvar.Location = new System.Drawing.Point(365, 395);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // comboBoxDisciplina
+            // 
+            this.comboBoxDisciplina.FormattingEnabled = true;
+            this.comboBoxDisciplina.Location = new System.Drawing.Point(110, 40);
+            this.comboBoxDisciplina.Name = "comboBoxDisciplina";
+            this.comboBoxDisciplina.Size = new System.Drawing.Size(330, 23);
+            this.comboBoxDisciplina.TabIndex = 5;
+            // 
+            // lblDisciplina
+            // 
+            this.lblDisciplina.AutoSize = true;
+            this.lblDisciplina.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDisciplina.Location = new System.Drawing.Point(12, 38);
+            this.lblDisciplina.Name = "lblDisciplina";
+            this.lblDisciplina.Size = new System.Drawing.Size(77, 21);
+            this.lblDisciplina.TabIndex = 0;
+            this.lblDisciplina.Text = "Disciplina";
             // 
             // TelaCadastroQuestao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 430);
+            this.Controls.Add(this.comboBoxDisciplina);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnAdicionarAlternativa);
             this.Controls.Add(this.btnExcluirAlternativa);
             this.Controls.Add(this.listBoxAlternativas);
@@ -122,6 +157,7 @@
             this.Controls.Add(this.textBoxDescricao);
             this.Controls.Add(this.lblAlternativas);
             this.Controls.Add(this.lblMateria);
+            this.Controls.Add(this.lblDisciplina);
             this.Controls.Add(this.lblDescricao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -143,5 +179,8 @@
         private System.Windows.Forms.Button btnAdicionarAlternativa;
         private System.Windows.Forms.TextBox textBoxMateria;
         private System.Windows.Forms.Label lblMateria;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.ComboBox comboBoxDisciplina;
+        private System.Windows.Forms.Label lblDisciplina;
     }
 }

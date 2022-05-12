@@ -7,10 +7,16 @@ namespace TestesDonaMariana.WinApp.Entidades
         public string Descricao;
         public string Materia;
         public List<Alternativa> Alternativas;
+        public Disciplina Disciplina;
 
         public Questao()
         {
             Alternativas = new List<Alternativa>();
+        }
+
+        public override string ToString()
+        {
+            return $"{Disciplina} - {Descricao}";
         }
     }
 }

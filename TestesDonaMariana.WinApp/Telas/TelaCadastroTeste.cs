@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestesDonaMariana.WinApp.Entidades;
+using TestesDonaMariana.WinApp.Repositorios;
 
 namespace TestesDonaMariana.WinApp.Telas
 {
     public partial class TelaCadastroTeste : Form
     {
-        public TelaCadastroTeste()
+        public RepositorioBase<Teste> Repositorio { get; }
+        public Teste Teste;
+
+        public TelaCadastroTeste(RepositorioBase<Teste> repositorio)
         {
             InitializeComponent();
+            Repositorio = repositorio;
+            Teste = new();
+
         }
+
+
     }
 }
