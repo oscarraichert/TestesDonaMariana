@@ -17,23 +17,27 @@ namespace TestesDonaMariana.WinApp
     public partial class TelaPrincipal : Form
     {
         public IMenuConfig<Questao> menuConfigQuestao;
-        Form telaMenu;
+        public TelaMenuBase<Questao> telaMenuQuest;
+        public TelaMenuBase<Teste> telaMenuTeste;
+        public IMenuConfig<Teste> menuConfigTeste;
 
         public TelaPrincipal()
         {
             menuConfigQuestao = new MenuQuestaoConfig();
+            menuConfigTeste = new MenuTesteConfig();
             InitializeComponent();
         }
 
         private void btnMenuTestes_Click(object sender, EventArgs e)
-        {          
-            
+        {
+            telaMenuTeste = new TelaMenuBase<Teste>(menuConfigTeste);
+            telaMenuTeste.ShowDialog();
         }
 
         private void btnQuestoes_Click(object sender, EventArgs e)
         {
-            telaMenu = new TelaMenuBase<Questao>(menuConfigQuestao);
-            telaMenu.ShowDialog();
+            telaMenuQuest = new TelaMenuBase<Questao>(menuConfigQuestao);
+            telaMenuQuest.ShowDialog();
         }
     }
 }
